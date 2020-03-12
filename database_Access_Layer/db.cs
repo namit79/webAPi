@@ -25,7 +25,7 @@ namespace start.database_Access_Layer
         public DataSet GetUsersById(int id)
         {
 
-            MySqlCommand com = new MySqlCommand("AddDocument", con);
+            MySqlCommand com = new MySqlCommand("GetUserById", con);
             com.CommandType = CommandType.StoredProcedure;
             com.Parameters.AddWithValue("id",id);
             MySqlDataAdapter da = new MySqlDataAdapter(com);
@@ -36,7 +36,7 @@ namespace start.database_Access_Layer
         public DataSet AddDocuments(document dc)
         {
 
-            MySqlCommand com = new MySqlCommand("getUserById", con);
+            MySqlCommand com = new MySqlCommand("AddDocument", con);
             com.CommandType = CommandType.StoredProcedure;
             com.Parameters.AddWithValue("document", dc.documentName);
             con.Open();

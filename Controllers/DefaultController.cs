@@ -14,33 +14,27 @@ namespace start.Controllers
     public class DefaultController : ApiController
     {
         database_Access_Layer.db dblayer = new database_Access_Layer.db();
-        public DataSet getRecord()
+       
+
+        // GET: api/Default
+        
+            public DataSet Get()
         {
             DataSet ds = dblayer.GetAllUsers();
             return ds;
         }
-
-        // GET: api/Default
-        
-            public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-        public DataSet getRecordById(int id)
+       
+        // GET: api/Default/5
+        public DataSet Get(int id)
         {
             DataSet ds = dblayer.GetUsersById(id);
             return ds;
         }
 
-        // GET: api/Default/5
-        public string Get(int id)
-        {
-            return "value";
-        }
-
         // POST: api/Default
         public void Post([FromBody]string value)
         {
+
         }
 
         // PUT: api/Default/5
